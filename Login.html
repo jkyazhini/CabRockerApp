@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color:grey;">
+<center>
+<h8 style="color:blue">LOGIN PAGE</h8>
+<br><br>
+<form formaction="CabType.html">
+        <label for="number"> Mobile Number :</label>
+        <input type="number" name="number" id="number" placeholder="Enter Mobile Number"required> <br><br> 
+      <label for="name"> User Name :</label>
+      <input type="text" name="username" id="username" placeholder="Enter User Name"required> <br><br> 
+      <label for="name">Password :</label>
+      <input type="password" name="passcode" id="Password" maxlength="8" required> <br><br>
+      <button type="button" onClick="Login()">SUBMIT</button>  //call the script function
+</form>
+<script>
+    function Login()
+    {
+        event.preventDefault();
+        alert("Login Button Clicked"); 
+        let number=document.querySelector("#number").value;
+        
+        let username=document.querySelector("#username").value;
+        
+        let password=document.querySelector("#Password").value;  
+    
+        
+        if(number.length==10 && username.length>0 && password.length==8 ) //check whether number,usernamr,password will be check
+        {
+            alert("Login Success");
+            window.location.href="CabType.html";   
+             }
+        else
+        {
+            alert("Invalid Login Credentials");   
+            
+        }
+}
+</script>
+
+</center>
+
+</body>
+</html> 
