@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	
+</head>
+
+<body style="background-color:grey">
+<center>
+	<form>
+	<video autoplay muted loop id="video" width="1000" height="300">
+	<source src="https://player.vimeo.com/external/328732843.sd.mp4?s=99ae36e251bca106e42a15c856aad51a9704d3c2&profile_id=164&oauth2_token_id=57447761" type="video/mp4"></video>
+		<h1>CAR TYPES</h1>
+		<table border="3">
+			<thead>
+				<tr> <th>S.NO</th> <th>Type</th> <th>Price Per Km</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr> <td>1.</td> <td>Micro</td> <td>Rs.10 per km</td>
+				</tr>
+				<tr> <td>2.</td> <td>Mini</td> <td>Rs.15 per km</td>
+				</tr>
+				<tr> <td>3.</td> <td>Prime</td> <td>Rs.20 per km</td>
+				</tr>
+			</tbody>
+           </table>
+           <br>
+<button onClick="price()">>>>ENTER>>></button>
+<script>
+    function price()
+    {
+        event.preventDefault();
+        window.location.href="Bill.html";
+    }
+</script>
+
+</form>
+</center>
+</body>
+</html>
