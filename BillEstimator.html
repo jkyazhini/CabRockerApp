@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+    
+<form >
+<h2 style="color:red">CAB ROCKER</h2><center>
+<img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMR16F7LgH7zGoJN3EbtLYlLzDcgAnjG_V-Q&usqp=CAU" width="400" height="300">
+</center><br>
+
+<label>SELECT CAB TYPE:</label>
+<select name="CabType" id="cabtype" >
+      <option value="MICRO" >MICRO </option>
+      <option value="MINI"  >MINI </option>
+      <option value="PRIME" >PRIME</option>
+      </select>
+<br> <br>
+
+<label for="name">Enter the Killometres  : </label>
+<input type="number" name="name" id="Km" placeholder="Enter km" required>
+<br><br>
+<label>Journey Date</label>
+<input type="date"name="Journey" id="date" min="2021-04-23" placeholder="Journey Date" required>
+<br><br>
+<label>Journey Time</label>
+<input type ="time" name="Journey" id="time" min="07:50:00" placeholder="Journey Date"  required><br><br>
+<label>AGE:</label>
+<input type="number" value="age" id="age" required><br><br>
+<button style="color:blue" type="button"onclick="cab()"> SUBMIT </button>&nbsp; <a href="Last.html">NEXT</a><br></center>
+<p id="Total"></p>
+
+<p id="Total1"></p>
+<p id="Total2"></p>
+<p id="Total3"></p>
+
+<p id="price1"></p>
+<p id="price2"></p>
+<p id="price3"></p>
+
+<p id="peakHour"></p>
+<p id="amountwithpeakhour"></p>
+<p id="seniorcitizen"></p>
+<p id="notseniorcitizen"></p>
+
+<center>
+
+</form>
+
+</center>
+
+<script>
+    let total;
+    function cab()
+    {
+        event.preventDefault();
+        alert("Login Button Clicked");
+        let cabtype=document.querySelector("#cabtype").value;
+        let Killometres=document.querySelector("#Km").value;  //get the cabtype and km
+        let km=parseInt(Killometres);
+    
+        switch (cabtype) 
+        {
+		case "MICRO":     /** calculate to the gst amount and 
+                          add to the price amount **/
+        {
+			let price=km*10;
+            document.getElementById("Total").innerHTML=" Amount :" +price;
+            
+            let gst= 7 * (price / 100);
+            document.getElementById("Total1").innerHTML=" GST Amount :" +gst;
+            let total=gst+price;
+            document.getElementById("price1").innerHTML="Total Amount :" +"Rs."+total+"/-";
+            dateTimeValidation(total);
+            break;
+		}
+		case "MINI":       ///calculate to tha gst +price amount
+        {
+			let price=km*15;
+            document.getElementById("Total").innerHTML=" Amount :" +price;
+            let gst=7*(price/100);
+            document.getElementById("Total2").innerHTML=" GST Amount :" +gst;
+            let total=gst+price;
+            document.getElementById("price2").innerHTML="Total Amount :" +"Rs."+total+"/-";
+            dateTimeValidation(total);
+            break;
+		}
+		case "PRIME":    ///calculate to the price amount +gst
+        {
+			let price=km*20;
+            document.getElementById("Total").innerHTML=" Amount :" +price;
+            let gst=7*(price/100);
+            document.getElementById("Total3").innerHTML="GSTAmount :" +gst;
+            let total=gst+price;
+            document.getElementById("price3").innerHTML="Total Amount :" +"Rs."+total+"/-";
+            dateTimeValidation(total);
+            break;
+            
+            
+        }
+        }
+        }
+        function dateTimeValidation(total)   //creat a new function in a same script
+    {
+        alert("Date Time valid");
+        let time=document.querySelector("#time").value;
+        let timeInt=time.substr(0,2);
+        let hour=parseInt(timeInt.substr(0,2));
+        if(hour>=parseInt(17) && hour<=parseInt(19))    //declare the peakhour
+        {
+            alert("peak hours");    
+            let a=total*0.0125;   //check the peak hour in math function
+            /*let a=window.location.search.substr(6);
+            let b=parseFloat(a);
+            let peakHourCharge=b*1.25;*/
+            document.getElementById("peakHour").innerHTML="Peak hours charges=Rs." +a+"/-";
+            let totalPaymentwithPeakHour=a+total;
+            document.getElementById("amountwithpeakhour").innerHTML="Total billamount is after adding peak hour charges=Rs." +totalPaymentwithPeakHour+"/-";
+            seniorCitizen(totalPaymentwithPeakHour);
+        }
+        else{
+            alert("not a peak hour");
+            seniorCitizen(total);
+        }
+
+    }
+   function seniorCitizen(amount)  //it is a new function in senior or not
+   {
+    let age=document.querySelector("#age").value;
+    let intOfAge=parseInt(age);
+    if(intOfAge>59)
+    {
+        let seniortotalPaymentwithPeakHour=amount/2;
+        document.getElementById("seniorcitizen").innerHTML="********YOU ARE A SENIOR CITIZEN******** \n WE WILL DISCOUNT 50% BILL AMOUNT FOR YOU        Your final bill amount is"+seniortotalPaymentwithPeakHour;
+    }
+    else{
+        document.getElementById("notseniorcitizen").innerHTML="You are not a senior citizen";
+    }
+       
+   }
+    
+</script>
+</body>
+</html> 
