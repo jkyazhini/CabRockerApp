@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color:rgb(216, 157, 211);">
+<form action="Login.html">
+
+      <center> <h1 style="color:blue"><header> CAB ROCKER </header></h1><br></center>
+       
+
+<article>
+  <h1>GOOD WISH</h1>
+   
+  <p><b> OUR CAB:</b> AC facility and we maintain a punctual timing. We provide a safety drive for ever. </p>
+</article>
+<aside>
+<h3>BENEFITS</h3>
+                         <p hidden> ola cab is not available in restricted area </p>
+                         <p> We provide a cashback price for first booking and also give exciting offers.</p> <br><br>
+</aside>
+
+<br>
+<main>
+            
+       <label for="name">Enter your Name : </label>
+       <input type="text" name="name"id="Name" placeholder="Firstname"size="20" autofocus required>
+       <input type="text"name="name"id="Name1"placeholder=""size="20" required><br> <br>
+       
+       <label for="name">Enter Your Age : </label>
+       <input type="number" name="name"id="Age" placeholder="Age"size="2" required><br> <br>
+
+       <label for="name">Enter Your Email-id: </label>
+       <input type="email" name="name"id="EmailNo" placeholder="Username"size="20" required><br> <br>
+       
+       <label for="name">Mobile No :</label>
+       <input type="number" name="name" id="No"placeholder="Numbers"size="10"required> <br><br> 
+       
+       <label for="name">Enter Your Languages :</label><br><br>
+       <input type="checkbox" name="tamil" id="TAM"  value="T">TAMIL<br><br>
+       <input type="checkbox" name="english"id="ENG" value="E">ENGLISH<br> <br>
+       <input type="checkbox" name="hindi"id="HIN"  value="H">HINDI<br> <br>
+       
+       <label for="country">Country:</label>  
+       <input type="text" id="country" name="country" value="INDIA" readonly><br><br>
+       
+       <label>Gender :</label><br><br>
+       <input type="radio" name="gender"id="M" readonly value="M"> Male<br><br>
+       <input type="radio" name="gender"id="F" readonly value="F"> Female<br><br>
+       <input type="radio" name="gender"id="O" readonly value="O"> Other<br><br>
+       
+       <label for="name">Are You Physically Challenged ?: </label>
+       <input type="text" name="name " id="Language" placeholder="Language" required><br><br>
+                   
+                   <ol>
+                    <li>YES</li>
+                    <li>No</li>
+                    </ol>
+       
+   <h1>INSTRUCTION</h1>     
+  <nav>
+ <ul>
+     <li>Must Wear The Mask</li>
+     <li>Should Not Eat in the Cab</li>
+ </ul>  
+ </nav>   <br><br> <center>
+ <section>
+          <button><a href="Login.html" style="color:blue">LOGIN</a> </button>   &nbsp;&nbsp;
+
+          <button ><a href="CabType.html"style="color:rgb(255, 145, 0)">CabType</a></button>&nbsp;&nbsp;
+
+            <button><a href="Bill.html"style="color:rgb(30, 255, 0)">Bill</a></button>&nbsp;&nbsp;
+ 
+                              <button ><a href="Last.html"style="color:rgb(255, 0, 0)">Last</a></button>&nbsp;&nbsp;
+      </section>
+ </main>
+       <center><footer> Registration 2000-2030</footer></center>
+      <center><button style="color:red" onClick="login()">LOGIN </button></center>
+      <br><br>
+      <center><video autoplay muted loop id="video" width="1000" height="500">
+                  <source src="https://player.vimeo.com/external/416129864.sd.mp4?s=5d2d31f5236a710aec8a39ea53c7ab9b0824a783&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+                  </video></center>
+</form>
+<script>
+      function login()
+      {
+          event.preventDefault();
+          alert("Login Button Clicked");
+          window.location.href="Login.html";
+      }
+      </script>
+</body>
+</html>
